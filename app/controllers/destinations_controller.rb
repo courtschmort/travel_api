@@ -1,14 +1,14 @@
 class DestinationsController < ApplicationController
 
   def index
-    # if params[:name]
+    if params[:name]
       name = params[:name]
       @destinations = Destination.search(name)
       json_response(@destinations)
-    # else
-    #   @destinations = Destination.all
-    #   json_response(@destinations)
-    # end
+    else
+      @destinations = Destination.all
+      json_response(@destinations)
+    end
   end
 
   def show
