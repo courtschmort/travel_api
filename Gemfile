@@ -15,7 +15,7 @@ gem 'faker'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -31,7 +31,14 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rspec-rails'
+  # ~NH~ ADDED FOLLOWING GEM AFTER NEW.
+  gem 'launchy'
+  # ~NH~ ADDED FOLLOWING GEM AFTER NEW.
+  gem 'pry'
+  gem 'capybara'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -41,6 +48,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+# ~NH~ ADDED FOLLOWING TEST GEMS AFTER NEW.
+group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'simplecov', require: false
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
